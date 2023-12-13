@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <h1>Add Food</h1>
+        <form method="post" action="{% url 'add_food' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Food</button>
+        </form>
+        <a href="{% url 'food_list' %}">Back to Food List</a>
+    </div>
+</main>
+{% endblock %}

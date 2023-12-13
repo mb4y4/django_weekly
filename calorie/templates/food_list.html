@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Food List{% endblock %}
+
+{% block content %}
+    <h2>Food List</h2>
+    <ul>
+        {% for food in Food %}
+            <li>{{ food.name }} - {{ food.calories }} calories</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_food' %}">Add Food</a>
+{% endblock %}
